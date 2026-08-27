@@ -25,9 +25,35 @@
     <p>Got a question or want to place a bulk order? Reach out through any of these:</p>
 
     <ul>
-      <li>Email: <a href="mailto:colladojericho02@gmail.com">jericho.collado@gmail.com</a></li>
+      <li>Email: <a href="mailto:colladojericho02@gmail.com">colladojericho02@gmail.com</a></li>
       <li>Facebook: <a href="https://www.facebook.com/">facebook.com/kapengkape</a></li>
     </ul>
+
+    <h2>Send Us a Message</h2>
+    <form>
+      <fieldset>
+        <legend>Your details</legend>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject">
+          <option value="product-question">Product question</option>
+          <option value="order-status">Order status</option>
+          <option value="wholesale">Wholesale enquiry</option>
+          <option value="other">Something else</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </fieldset>
+
+      <button type="submit">Send message</button>
+    </form>
   </main>
 
   <footer>
