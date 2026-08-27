@@ -6,13 +6,13 @@
   <title>Contact - Kapeng Kape</title>
   <style>
     :root {
-      --coffee-dark: #3b2419;
-      --coffee-medium: #6f4e37;
-      --coffee-light: #a9744f;
-      --cream: #faf3eb;
-      --cream-card: #fffaf3;
-      --accent: #c47a3d;
-      --text-muted: #6b5d54;
+      --espresso: #2b1d14;
+      --roast: #5c3a21;
+      --caramel: #b87333;
+      --cream: #fff8ef;
+      --panel: #ffffff;
+      --muted: #7a6a5c;
+      --gold: #d4a24c;
     }
 
     * {
@@ -21,100 +21,114 @@
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Georgia, 'Times New Roman', serif;
       background-color: var(--cream);
-      color: var(--coffee-dark);
-      line-height: 1.6;
+      color: var(--espresso);
     }
 
     header {
-      background-color: var(--coffee-dark);
+      background: linear-gradient(135deg, var(--espresso), var(--roast));
       color: var(--cream);
-      padding: 2rem 1.5rem 1.5rem;
+      padding: 3rem 1.5rem 2rem;
       text-align: center;
+      border-bottom: 4px solid var(--gold);
     }
 
     header h1 {
-      margin: 0 0 0.25rem;
-      font-size: 2rem;
-      letter-spacing: 0.5px;
+      margin: 0;
+      font-size: 2.75rem;
+      letter-spacing: 1px;
     }
 
     header p {
-      margin: 0 0 1.25rem;
-      color: #e6d5c3;
-      font-style: italic;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0.5rem 0 1.5rem;
+      color: #e8d4bd;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 2.5rem;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     nav a {
-      color: var(--cream);
+      color: var(--gold);
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease, color 0.2s ease;
     }
 
     nav a:hover,
     nav a:focus {
-      border-bottom-color: var(--accent);
+      color: var(--cream);
+      border-bottom-color: var(--cream);
     }
 
     main {
-      max-width: 640px;
-      margin: 2.5rem auto;
+      max-width: 680px;
+      margin: 3rem auto;
       padding: 0 1.5rem;
     }
 
     main h2 {
-      color: var(--coffee-medium);
-      border-bottom: 2px solid #e6d5c3;
-      padding-bottom: 0.5rem;
+      text-align: center;
+      font-size: 1.9rem;
+      color: var(--roast);
+      margin-bottom: 0.25rem;
     }
 
     main > p {
-      color: var(--text-muted);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: var(--muted);
+      margin-top: 0;
     }
 
     ul.contact-list {
       list-style: none;
       padding: 0;
-      margin: 1.5rem 0 2.5rem;
+      margin: 1.5rem 0 3rem;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     ul.contact-list li {
-      background-color: var(--cream-card);
-      border: 1px solid #eadfd2;
-      border-radius: 8px;
-      padding: 0.9rem 1.1rem;
-      margin-bottom: 0.75rem;
+      background-color: var(--panel);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.85rem;
+      box-shadow: 0 4px 14px rgba(43, 29, 20, 0.08);
     }
 
     ul.contact-list a {
-      color: var(--coffee-light);
-      font-weight: 600;
+      color: var(--caramel);
+      font-weight: 700;
       text-decoration: none;
     }
 
     ul.contact-list a:hover {
+      color: var(--roast);
       text-decoration: underline;
     }
 
     form {
-      background-color: var(--cream-card);
-      border: 1px solid #eadfd2;
-      border-radius: 12px;
-      padding: 1.75rem;
-      box-shadow: 0 4px 14px rgba(59, 36, 25, 0.08);
+      background-color: var(--panel);
+      border-radius: 4px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(43, 29, 20, 0.12);
+      font-family: 'Segoe UI', sans-serif;
     }
 
     fieldset {
@@ -124,18 +138,19 @@
     }
 
     legend {
+      font-family: Georgia, serif;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--coffee-medium);
-      padding: 0 0 1rem;
+      font-size: 1.2rem;
+      color: var(--roast);
+      padding: 0 0 1.25rem;
     }
 
     label {
       display: block;
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 1.1rem;
       margin-bottom: 0.35rem;
-      color: var(--coffee-dark);
+      color: var(--espresso);
     }
 
     input[type="text"],
@@ -144,21 +159,21 @@
     textarea {
       width: 100%;
       padding: 0.65rem 0.75rem;
-      border: 1px solid #d9c8b8;
-      border-radius: 6px;
+      border: 1px solid #e0d0bc;
+      border-radius: 4px;
       font-size: 1rem;
       font-family: inherit;
-      background-color: #fff;
-      color: var(--coffee-dark);
+      background-color: var(--cream);
+      color: var(--espresso);
     }
 
     input[type="text"]:focus,
     input[type="email"]:focus,
     select:focus,
     textarea:focus {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--gold);
       outline-offset: 1px;
-      border-color: var(--accent);
+      border-color: var(--caramel);
     }
 
     textarea {
@@ -167,12 +182,12 @@
     }
 
     button[type="submit"] {
-      margin-top: 1.5rem;
-      background-color: var(--coffee-medium);
+      margin-top: 1.75rem;
+      background-color: var(--roast);
       color: var(--cream);
       border: none;
-      padding: 0.75rem 1.75rem;
-      border-radius: 6px;
+      padding: 0.75rem 1.9rem;
+      border-radius: 4px;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
@@ -180,21 +195,22 @@
     }
 
     button[type="submit"]:hover {
-      background-color: var(--coffee-dark);
+      background-color: var(--espresso);
     }
 
     button[type="submit"]:focus {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--gold);
       outline-offset: 2px;
     }
 
     footer {
       text-align: center;
-      padding: 1.5rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid #eadfd2;
-      margin-top: 2rem;
+      padding: 2rem 1.5rem;
+      background-color: var(--espresso);
+      color: #cbb89c;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 0.85rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -202,7 +218,7 @@
 
   <header>
     <h1>Kapeng Kape</h1>
-    <p>Brewed with love, served with pride.</p>
+    <p>Brewed with love, served with pride</p>
 
     <nav>
       <ul>
