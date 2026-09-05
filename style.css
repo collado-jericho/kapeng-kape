@@ -144,7 +144,6 @@ footer {
   background-color: var(--panel);
   border-radius: 4px;
   border-left: 6px solid var(--brand);
-  padding: 16px;
   margin-bottom: 1.75rem;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(43, 29, 20, 0.12);
@@ -159,15 +158,14 @@ footer {
 }
 
 .product-card img {
-  width: calc(100% + 32px);
+  width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 4px;
-  margin: -16px -16px 1rem -16px;
+  display: block;
 }
 
 .card-body {
-  padding: 0 0 0.5rem;
+  padding: 16px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex: 1;
   display: flex;
