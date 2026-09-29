@@ -24,16 +24,46 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background-color: var(--bg-light);
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 /* =========================================
    3. LAYOUT REGIONS
    ========================================= */
+
+/* --- Page grid skeleton (mobile-first, Lesson 7.5) --- */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "masthead"
+    "main"
+    "side"
+    "foot";
+  gap: 16px;
+}
+
+/* Enhance at tablet and up */
+@media (min-width: 700px) {
+  .page {
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+      "masthead masthead"
+      "side     main"
+      "foot     foot";
+  }
+}
+
+.site-header { grid-area: masthead; }
+aside  { grid-area: side; }
+main   { grid-area: main; }
+footer { grid-area: foot; }
 
 /* --- Header (flexbox) --- */
 .site-header {
@@ -66,6 +96,7 @@ img {
 /* --- Nav bar --- */
 .site-header nav ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   list-style: none;
   padding: 0;
@@ -102,23 +133,44 @@ img {
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.5px;
+  padding: 0 1rem;
 }
 
-/* --- Page grid skeleton (Lesson 7.4) --- */
-.page {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-areas:
-    "masthead masthead"
-    "side     main"
-    "foot     foot";
-  gap: 16px;
+/* --- Main --- */
+main {
+  max-width: 100%;
+  padding: 1.5rem;
 }
 
-.site-header { grid-area: masthead; }
-aside  { grid-area: side; }
-main   { grid-area: main; }
-footer { grid-area: foot; }
+main h1,
+main h2 {
+  text-align: center;
+  color: var(--roast);
+}
+
+main h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold);
+  margin: 0.75rem auto 2.5rem;
+}
+
+main > p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--muted);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--ink);
+  color: #cbb89c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.85rem;
+}
 
 /* --- Sidebar --- */
 aside {
@@ -161,48 +213,11 @@ aside p {
   margin: 0 0 0.5rem;
 }
 
-/* --- Main --- */
-main {
-  max-width: 100%;
-  padding: 1.5rem 0;
-}
-
-main h1,
-main h2 {
-  text-align: center;
-  color: var(--roast);
-}
-
-main h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--gold);
-  margin: 0.75rem auto 2.5rem;
-}
-
-main > p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--muted);
-}
-
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  background-color: var(--ink);
-  color: #cbb89c;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.85rem;
-  margin-top: 3rem;
-}
-
 /* =========================================
    4. COMPONENTS
    ========================================= */
 
-/* --- Product card grid (index.html) - Flexbox layout --- */
+/* --- Product card grid (index.html) - Flexbox layout, wraps responsively --- */
 .product-grid {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +226,7 @@ footer {
 
 .product-card {
   flex: 1 1 240px;
+  max-width: 100%;
   background-color: var(--panel);
   border-radius: 4px;
   border-left: 6px solid var(--brand);
@@ -285,7 +301,7 @@ section {
   background-color: var(--panel);
   border-radius: 4px;
   box-shadow: 0 6px 20px rgba(43, 29, 20, 0.12);
-  padding: 2.5rem;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -348,7 +364,7 @@ ul.contact-list a:hover {
 form {
   background-color: var(--panel);
   border-radius: 4px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(43, 29, 20, 0.12);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -453,6 +469,9 @@ table {
   box-shadow: 0 4px 14px rgba(43, 29, 20, 0.1);
   border-radius: 4px;
   overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 th, td {
@@ -483,8 +502,13 @@ tbody td {
   border-bottom: 1px solid #f0e2d2;
 }
 
-/* --- Product detail page image --- */
+/* --- Product detail page image (responsive, no fixed pixel width) --- */
 main img.product-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   margin: 0 auto 1.75rem;
   border-radius: 4px;
   box-shadow: 0 6px 20px rgba(43, 29, 20, 0.15);
