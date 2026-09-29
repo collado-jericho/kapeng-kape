@@ -104,11 +104,67 @@ img {
   letter-spacing: 0.5px;
 }
 
+/* --- Page grid skeleton (Lesson 7.4) --- */
+.page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-areas:
+    "masthead masthead"
+    "side     main"
+    "foot     foot";
+  gap: 16px;
+}
+
+.site-header { grid-area: masthead; }
+aside  { grid-area: side; }
+main   { grid-area: main; }
+footer { grid-area: foot; }
+
+/* --- Sidebar --- */
+aside {
+  background-color: var(--panel);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(43, 29, 20, 0.12);
+  align-self: start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+aside h2 {
+  font-family: Georgia, serif;
+  color: var(--roast);
+  font-size: 1.2rem;
+  text-align: left;
+  margin-top: 0;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+
+aside ul li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f0e2d2;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+aside ul li:last-child {
+  border-bottom: none;
+}
+
+aside p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
 /* --- Main --- */
 main {
-  max-width: 960px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
+  max-width: 100%;
+  padding: 1.5rem 0;
 }
 
 main h1,
