@@ -296,6 +296,41 @@ aside p {
   background-color: var(--roast);
 }
 
+/* --- Availability & delivery box (product detail page) --- */
+.status-box {
+  background-color: var(--panel);
+  border-left: 6px solid var(--brand);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 14px rgba(43, 29, 20, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.status-box h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.status-box h2::after {
+  display: none;
+}
+
+.status-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+}
+
+.status-box li {
+  padding: 0.35rem 0;
+}
+
+.status-box strong {
+  color: var(--ink);
+}
 /* --- About page profile section --- */
 section {
   background-color: var(--panel);
